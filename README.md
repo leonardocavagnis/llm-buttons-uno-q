@@ -9,9 +9,13 @@ The generated response is then displayed on a web page.
 - Arduino Modulino Buttons
 - QWIIC Cable
 
+![Button-Controlled Cloud LLM with Arduino UNO Q - Schematics](assets/docs_assets/img_schematics.png)
+
 ## How It Works
 - The Arduino sketch handles all hardware interactions: it detects button presses on the Modulino and sends the corresponding button ID to Python via the Bridge.
 - The Python application receives the button ID, maps it to a predefined prompt, sends the prompt to the cloud LLM, and then forwards the generated response to be displayed on the web page.
+
+![Button-Controlled Cloud LLM with Arduino UNO Q - Block Diagram](assets/docs_assets/img_blockdiagram.png)
 
 ## Bricks
 The bricks used are:
