@@ -1,0 +1,42 @@
+body {
+    margin: 0;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Roboto Mono', monospace; /* Font stile tecnico */
+    background-color: #ffffff;
+    color: #333;
+}
+
+.main-container {
+    text-align: center;
+    width: 80%;
+    max-width: 800px;
+}
+
+#status-text {
+    font-size: 1.2rem;
+    font-weight: 400;
+    color: #888;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    margin-bottom: 30px;
+}
+
+#response-box {
+    display: none;
+    font-size: 1.1rem;
+    line-height: 1.6;
+    text-align: left;
+    white-space: pre-wrap; /* Mantiene gli a capo del testo AI */
+    padding: 20px;
+    border-left: 3px solid #008184; /* Un tocco di colore Arduino */
+    background: #fcfcfc;
+    animation: fadeIn 0.5s ease-in;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+}

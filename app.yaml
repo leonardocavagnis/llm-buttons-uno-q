@@ -5,4 +5,5 @@ bricks:
 - arduino:cloud_llm:
     variables:
       API_KEY: <YOUR_SECRET_API_KEY>
+- arduino:web_ui: {}
 icon: 🟢
