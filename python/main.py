@@ -3,16 +3,23 @@ from arduino.app_bricks.web_ui import WebUI
 from arduino.app_utils import App, Bridge
 import time
 
-DEBUG_MODE = True
+# --- CONFIGURATION ---
+DEBUG_MODE = True  # Set to True for testing without real LLM costs
 
 llm = CloudLLM(model=CloudModel.GOOGLE_GEMINI)
 ui = WebUI()
 
 def prompt_call_from_button(button):
-    print("Button", button, "pressed!")
+    """
+    Function triggered by the hardware button via Bridge.
+    It handles the logic to switch between prompts and send updates to the WebUI.
+    """
+    print(f"Button {button} pressed!")
 
+    # Notify the Web interface that the LLM is processing
     ui.send_message('llm_status', {'state': 'thinking'})
 
+    # 1. Define the prompt based on the button index
     if button == 1:
         prompt = "Write the recipe for carbonara"
     elif button == 2:
@@ -20,27 +27,30 @@ def prompt_call_from_button(button):
     elif button == 3:
         prompt = "Weekend itinerary for Copenhagen"
     else:
+        # If no valid button is pressed, return to idle state
         ui.send_message('llm_status', {'state': 'idle'})
-        print("No prompt for this button")
+        print("No prompt defined for this button index")
         return
 
-    print(prompt)
-    
+    # 2. Handle the LLM Response (Simulated or Real)
     if DEBUG_MODE:
-        # LLM Emulation
+        # Simulate processing time
         time.sleep(3)
-        response = f"TEST RESPONSE: You requested info for button {button}."
+        # Create a dynamic message for the specific prompt and repeat it to test scrolling
+        debug_message = f"This is the response for the prompt: '{prompt}'.\n"
+        response = debug_message * 30
     else:
-        # Real LLM Call
+        # Call the real Gemini LLM
         response = llm.chat(prompt)
     
-    print(response)
-
+    # 3. Send the final result back to the browser
     ui.send_message('llm_status', {
         'state': 'done',
         'response': response
     })
 
+# Register the function so it can be called by the microcontroller
 Bridge.provide("prompt_call_from_button", prompt_call_from_button)
 
+# Start the application loop
 App.run()
