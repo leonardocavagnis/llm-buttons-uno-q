@@ -3,7 +3,7 @@ from arduino.app_bricks.web_ui import WebUI
 from arduino.app_utils import App, Bridge
 import time
 
-DEBUG_MODE = False
+DEBUG_MODE = True
 
 llm = CloudLLM(model=CloudModel.GOOGLE_GEMINI)
 ui = WebUI()
