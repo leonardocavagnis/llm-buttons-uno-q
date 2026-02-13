@@ -36,11 +36,11 @@ def prompt_call_from_button(button):
     if DEBUG_MODE:
         # Simulate processing time
         time.sleep(3)
-        # Create a dynamic message for the specific prompt and repeat it to test scrolling
+        # Create a big test message for the specific prompt
         debug_message = f"This is the response for the prompt: '{prompt}'.\n"
         response = debug_message * 30
     else:
-        # Call the real Gemini LLM
+        # Call the real LLM
         response = llm.chat(prompt)
     
     # 3. Send the final result back to the browser
