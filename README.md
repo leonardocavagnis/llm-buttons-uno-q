@@ -1,7 +1,7 @@
 # 🟢 Button-Controlled Cloud LLM with Arduino UNO Q
 
 This project connects physical buttons to a cloud-based Large Language Model.
-When a button is pressed, a predefined prompt is sent to a cloud LLM (using Google Gemini in this example).
+When a button is pressed, a predefined prompt is sent to a cloud LLM (_using Google Gemini in this example_).
 The generated response is then displayed on a web page.
 
 ## HW Setup
@@ -15,5 +15,5 @@ The generated response is then displayed on a web page.
 
 ## Bricks
 The bricks used are:
-- CloudLLM: Provides a simple interface to interact with cloud LLMs (GPT, Claude, Gemini), handling prompts, responses, and context.
-- WebUI - HTML: Lightweight web server for hosting frontend apps and exposing APIs or WebSocket channels.
+- **CloudLLM**: Provides a simple interface to interact with cloud LLMs (GPT, Claude, Gemini), handling prompts, responses, and context.
+- **WebUI HTML**: Lightweight web server for hosting frontend apps and exposing APIs or WebSocket channels.
