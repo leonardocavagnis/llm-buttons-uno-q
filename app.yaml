@@ -1,5 +1,5 @@
 name: Button-Controlled Cloud LLM
-description: ""
+description: An app for Arduino UNO Q that uses physical buttons to trigger cloud LLM prompts and display AI-generated responses on a web page.
 ports: []
 bricks:
 - arduino:cloud_llm:
