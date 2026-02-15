@@ -22,7 +22,7 @@ socket.on('llm_status', (data) => {
     } else if (data.state === 'done') {
         // Completion state: display the final AI response in the scrollable box
         statusText.textContent = "Done! Take a look:";
-        responseBox.textContent = data.response;
+        responseBox.innerHTML = data.response;
         responseBox.style.display = 'block';
     }
 });
