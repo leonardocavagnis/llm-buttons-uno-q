@@ -32,6 +32,9 @@ def prompt_call_from_button(button):
         print("No prompt defined for this button index")
         return
 
+    prompt +="\n Do not render the result in Markdown, use HTML tags instead."
+    prompt +="\n E.g. for bold text, do not use **some text** but <strong>some text</strong> instead."
+    
     # 2. Handle the LLM Response (Simulated or Real)
     if DEBUG_MODE:
         # Simulate processing time

@@ -29,10 +29,8 @@ body {
     font-size: 1.1rem;
     line-height: 1.6;
     text-align: left;
-    white-space: pre-wrap;
     padding: 20px;
     border-left: 3px solid #008184;
-    background: #fcfcfc;
     max-height: 50vh;
     overflow-y: auto;
     word-wrap: break-word;
